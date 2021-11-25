@@ -65,7 +65,7 @@ foreach ($eve as $eve)
                     //esta inscrito en el evento?
                     $eventovol=$pdo->prepare("SELECT * FROM `tbl_evento_voluntario` where id_vol=? and id_even=?");
                     $eventovol->bindParam(1, $usuid);
-                    $eventovol->bindParam(1, $eve['id']);
+                    $eventovol->bindParam(2, $eve['id']);
                     $eventovol->execute();
 
                     $eventovol=$eventovol->fetchAll(PDO::FETCH_ASSOC);
@@ -90,6 +90,7 @@ foreach ($eve as $eve)
                             header("Location:../view/login.php");
                         }
                 }
+            header("Location:../view/login.php");
         }
         else
         {
@@ -97,24 +98,3 @@ foreach ($eve as $eve)
             header("Location:../view/login.php");
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
