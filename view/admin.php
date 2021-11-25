@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <?php 
 include_once '../services/connection.php';
-$evento = $_POST['evento'];
+$evento_nom = $_REQUEST['nombre_even'];
+$evento_id = $_REQUEST['id'];
 ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividades de Barcelona</title>
+    <title>Admin - Actividades de Barcelona</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,21 +17,39 @@ $evento = $_POST['evento'];
 </head>
 <body>
 <div class="atras"><a href="evento.admin.php"><img src="../img/back.png" ></a></div>
-<div class="logout"><a href="../services/kill-login.php"><img src="../img/logout.png" ></a></div>
-<div class="viendo-evento"><h1>Visualizando los voluntarios de <?php echo $evento?> </h1></div>
+<div class="logout"><a href="../processes/kill-login.php"><img src="../img/logout.png" ></a></div>
+<div class="viendo-evento"><h1>Voluntarios de <?php echo $evento_nom?> </h1></div>
 <div class="historial">
+    <div class="capacidad">
+    <?php
+            $sql_evento=$pdo->prepare("SELECT * FROM tbl_evento where id=?");
+            $sql_evento->bindParam(1, $evento_id);
+            $sql_evento->execute();
+            $sql_evento = $sql_evento->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($sql_evento as $sql_evento) {
+                ?>
+                <h3>Voluntarios inscritos: <?php echo $sql_evento['capacidad_even'] ?></h3>
+                <h3>Voluntarios máximos: <?php echo $sql_evento['capacidad_max_even'] ?></h3>
+    <?php    
+        }
+    ?>
+    </div>
     <table class="table table-striped table-hover">
     <thead class="thead-dark">
-        <tr><form action="./admin.php" method="POST">
+        <tr><form action="admin.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $evento_id?>">
+                <input type="hidden" name="nombre_even" value="<?php echo $evento_nom?>">
                 <th><input type="text" name="nombre" placeholder="Nombre"></th>
                 <th><input type="text" name="correo" placeholder="Correo"></th>
                 <th><input type="text" name="dni" placeholder="DNI"></th>
+                <th><input type="submit" name="enviar" value="Filtrar"></th>
         </form></tr>
 
         <?php
     $queryGeneral = "SELECT tbl_voluntario.nombre_vol,tbl_voluntario.correo_vol, tbl_voluntario.dni_vol FROM `tbl_voluntario`
      INNER JOIN tbl_evento_voluntario on tbl_voluntario.id=tbl_evento_voluntario.id_vol 
-     INNER JOIN tbl_evento on tbl_evento_voluntario.id_even=tbl_evento.id where tbl_evento.id=1 ";
+     INNER JOIN tbl_evento on tbl_evento_voluntario.id_even=tbl_evento.id where tbl_evento.id={$evento_id} ";
 
     if(isset($_POST['nombre'])){
         $nombre = $_POST['nombre'];
@@ -59,6 +78,7 @@ $evento = $_POST['evento'];
             <th>Nombre</th>
             <th>Correo</th>
             <th>DNI</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
