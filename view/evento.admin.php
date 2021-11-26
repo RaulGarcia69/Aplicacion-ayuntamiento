@@ -36,8 +36,12 @@ include_once '../services/connection.php';
     
     <div class="evento" onclick="location.href='admin.php?<?php echo $numero_evento?>';">
     <div class="evento-contenido">
-    <h3><?php echo $evento['nombre_even']; ?></h3>
-    <p><?php echo limit_words($evento['descripcion_even'],20); ?>...</p>
+        <h3><?php echo $evento['nombre_even']; ?></h3>
+        <p><?php echo limit_words($evento['descripcion_even'],20); ?>...</p>
+        <div class="capacidad">
+            <p>Voluntarios inscritos = <?php echo $evento['capacidad_even'] ?></p>
+            <p>Voluntarios Voluntarios máximos = <?php echo $evento['capacidad_max_even'] ?></p>
+        </div>
     </div>
     </div>
     
