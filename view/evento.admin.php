@@ -29,9 +29,7 @@ include_once '../services/connection.php';
     $evento=$evento->fetchAll(PDO::FETCH_ASSOC);
     
     foreach ($evento as $evento) {
-        $nombre=$evento['nombre_even'];
-        $id=$evento['id'];
-        $numero_evento="nombre_even=".$nombre."&id=".$id;
+        $numero_evento="id=".$evento['id'];
 ?>
     
     <div class="evento" onclick="location.href='admin.php?<?php echo $numero_evento?>';">
@@ -40,7 +38,7 @@ include_once '../services/connection.php';
         <p><?php echo limit_words($evento['descripcion_even'],20); ?>...</p>
         <div class="capacidad">
             <p>Voluntarios inscritos = <?php echo $evento['capacidad_even'] ?></p>
-            <p>Voluntarios Voluntarios máximos = <?php echo $evento['capacidad_max_even'] ?></p>
+            <p>Voluntarios máximos = <?php echo $evento['capacidad_max_even'] ?></p>
         </div>
     </div>
     </div>

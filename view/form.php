@@ -23,7 +23,7 @@ include_once '../services/connection.php';
 
     
 <?php
-    $evento=$pdo->prepare("SELECT * from tbl_evento");
+    $evento=$pdo->prepare("SELECT * FROM `tbl_evento` ORDER BY tbl_evento.fecha_ini_even ASC LIMIT 3");
     $evento->execute();
     $evento=$evento->fetchAll(PDO::FETCH_ASSOC);
     foreach ($evento as $evento) {
@@ -32,6 +32,21 @@ include_once '../services/connection.php';
         <div class="evento-individual-contenido">
             <h1><?php echo $evento['nombre_even']; ?></h1>
             <p><?php echo $evento['descripcion_even']; ?></p>
+            <?php
+            if ($evento['fecha_fin_even']==null or $evento['fecha_fin_even']==$evento['fecha_ini_even']) {
+                ?><p><strong>Cuando:</strong> El <?php echo $evento['fecha_ini_even']; ?></p>
+                <?php
+            }
+            else{
+                ?><p><strong>Cuando:</strong> De <?php echo $evento['fecha_ini_even']; ?> a <?php echo $evento['fecha_fin_even']; ?></p>
+                <?php
+            }
+            ?>
+            <p><strong>Donde:</strong> En <?php echo $evento['lugar_even']; ?></p>
+            
+        </div>
+        <div class="evento-individual-imagen">
+            <img src="../img/even_img/<?php echo $evento['img_even']; ?>" width="400vh" height="300vh">
         </div>
         <div class="inscribir"><button type='button' class='btn btn-light btn-lg' >Inscribirte</button></div>
         

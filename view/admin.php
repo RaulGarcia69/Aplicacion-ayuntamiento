@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php 
 include_once '../services/connection.php';
-$evento_nom = $_REQUEST['nombre_even'];
 $evento_id = $_REQUEST['id'];
 ?>
 <html lang="en">
@@ -23,7 +22,6 @@ $evento_id = $_REQUEST['id'];
     <thead class="thead-dark">
         <tr><form action="admin.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $evento_id?>">
-                <input type="hidden" name="nombre_even" value="<?php echo $evento_nom?>">
                 <th><input type="text" name="nombre" placeholder="Nombre"></th>
                 <th><input type="text" name="correo" placeholder="Correo"></th>
                 <th><input type="text" name="dni" placeholder="DNI"></th>
