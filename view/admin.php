@@ -18,24 +18,8 @@ $evento_id = $_REQUEST['id'];
 <body>
 <div class="atras"><a href="evento.admin.php"><img src="../img/back.png" ></a></div>
 <div class="logout"><a href="../processes/kill-login.php"><img src="../img/logout.png" ></a></div>
-<div class="viendo-evento"><h1>Voluntarios de <?php echo $evento_nom?> </h1></div>
 <div class="historial">
-    <div class="capacidad">
-    <?php
-            $sql_evento=$pdo->prepare("SELECT * FROM tbl_evento where id=?");
-            $sql_evento->bindParam(1, $evento_id);
-            $sql_evento->execute();
-            $sql_evento = $sql_evento->fetchAll(PDO::FETCH_ASSOC);
-
-            foreach ($sql_evento as $sql_evento) {
-                ?>
-                <h3>Voluntarios inscritos: <?php echo $sql_evento['capacidad_even'] ?></h3>
-                <h3>Voluntarios máximos: <?php echo $sql_evento['capacidad_max_even'] ?></h3>
-    <?php    
-        }
-    ?>
-    </div>
-    <table class="table table-striped table-hover">
+    <table class="table table-hover table-borderless">
     <thead class="thead-dark">
         <tr><form action="admin.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $evento_id?>">
@@ -87,6 +71,7 @@ $evento_id = $_REQUEST['id'];
                     <td><?php echo $voluntarios['nombre_vol'] ?></td>
                     <td><?php echo $voluntarios['correo_vol'] ?></td>
                     <td><?php echo $voluntarios['dni_vol'] ?></td>
+                    <td></td>
                 </tr>
 
                 <?php } ?>

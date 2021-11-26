@@ -14,7 +14,7 @@
     <div class="region-login">
   
             <div class="login">
-                <form action="../services/login.php" method="POST"class="login-form">
+                <form action="../processes/login.php" method="POST"class="login-form">
                     <label for="username">Introduze tu correo</label>
                     <input type="email" placeholder="admin1@gmail.com" id="login_username" class="login-input_username" name="username">
                     <label for="password">Introduze tu contraseña</label>

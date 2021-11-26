@@ -5,9 +5,9 @@ $password = $_POST['password'];
 
 $password = md5($password);
 
-$stmt=$pdo->prepare("SELECT * FROM `tbl_admin` WHERE correo_Admin=? and pass_admin=?");
-$stmt->bindParam(1, $password);
-$stmt->bindParam(2, $username);
+$stmt=$pdo->prepare("SELECT * FROM `tbl_admin` WHERE correo_admin=? and pass_admin=?");
+$stmt->bindParam(1, $username);
+$stmt->bindParam(2, $password);
 
 
 $stmt->execute();
