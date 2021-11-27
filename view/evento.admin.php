@@ -14,38 +14,38 @@ include_once '../services/connection.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="../js/code.js"></script>
 </head>
-<body>
-<div class="logout"><a href="../processes/kill-login.php"><img src="../img/logout.png" ></a></div>
-<div class="visualizar-eventos">
-<?php
+<body class="body-even-admin">
+    <div class="logout"><a href="../processes/kill-login.php"><img src="../img/logout.png" ></a></div>
+    <div class="visualizar-eventos">
+    <?php
 
-    function limit_words($string, $word_limit)
-    {
-        $words = explode(" ",$string);
-        return implode(" ", array_splice($words, 0, $word_limit));
-    }
-    $evento=$pdo->prepare("SELECT * from tbl_evento");
-    $evento->execute();
-    $evento=$evento->fetchAll(PDO::FETCH_ASSOC);
-    
-    foreach ($evento as $evento) {
-        $numero_evento="id=".$evento['id'];
-?>
-    
-    <div class="evento" onclick="location.href='admin.php?<?php echo $numero_evento?>';">
-    <div class="evento-contenido">
-        <h3><?php echo $evento['nombre_even']; ?></h3>
-        <p><?php echo limit_words($evento['descripcion_even'],20); ?>...</p>
-        <div class="capacidad">
-            <p>Voluntarios inscritos = <?php echo $evento['capacidad_even'] ?></p>
-            <p>Voluntarios máximos = <?php echo $evento['capacidad_max_even'] ?></p>
-        </div>
-    </div>
-    </div>
-    
-
-<?php
+        function limit_words($string, $word_limit)
+        {
+            $words = explode(" ",$string);
+            return implode(" ", array_splice($words, 0, $word_limit));
         }
+        $evento=$pdo->prepare("SELECT * from tbl_evento");
+        $evento->execute();
+        $evento=$evento->fetchAll(PDO::FETCH_ASSOC);
+    
+        foreach ($evento as $evento) {
+            $numero_evento="id=".$evento['id'];
+        ?>
+    
+        <div class="evento" onclick="location.href='admin.php?<?php echo $numero_evento?>';">
+            <div class="evento-contenido">
+                <h3><?php echo $evento['nombre_even']; ?></h3>
+                <p><?php echo limit_words($evento['descripcion_even'],20); ?>...</p>
+                <div class="capacidad">
+                    <p>Voluntarios inscritos = <?php echo $evento['capacidad_even'] ?></p>
+                    <p>Voluntarios máximos = <?php echo $evento['capacidad_max_even'] ?></p>
+                </div>
+            </div>
+        </div>
+    
+
+    <?php
+    }
     ?>
     </div>
     

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
-<body>
+<body class="body-login">
     <div class="region-login">
   
             <div class="login">
@@ -19,7 +19,7 @@
                     <input type="email" placeholder="admin1@gmail.com" id="login_username" class="login-input_username" name="username">
                     <label for="password">Introduze tu contraseña</label>
                     <input type="password" placeholder="Password" id="login_password" class="login-input_password" name="password">
-                    <input type="submit" name="enviar" value="enviar" id="login_btn_enviar" class="login-btn_enviar">
+                    <input type="submit" name="enviar" value="Iniciar sesión" id="login_btn_enviar" class="login-btn_enviar">
                 </form>
                 
             </div>
