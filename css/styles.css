@@ -341,11 +341,6 @@ input {
     transition: all 0.3s;
 }
 
-.region-registrarse form.registrarse-form:hover {
-    -webkit-transform: scale(1.03);
-    transform: scale(1.03);
-}
-
 .region-registrarse form.registrarse-form input {
     padding: 10px;
     margin: 10px 10px 20px 20px;
@@ -378,8 +373,9 @@ input {
 }
 
 .region-registrarse form.registrarse-form input[type='submit']:hover {
-    -webkit-transform: scale(1.03);
-    transform: scale(1.03);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    background-color: rgb(141, 30, 30);
 }
 
 .resize {
@@ -408,7 +404,27 @@ input {
     pointer-events: none;
 }
 
-.modalmask:target {
-    opacity: 1;
-    pointer-events: auto;
+.cerrar {
+    color: white;
+    font-size: 5vh;
+    font-weight: bold;
+    top: 16%;
+    right: 25%;
+    position: absolute;
+    z-index: 1;
+    background-color: brown;
+    line-height: 35px;
+    width: 35px;
+    text-align: center;
+    border-radius: 3px;
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+.cerrar:hover {
+    background-color: rgb(141, 30, 30);
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    transform: scale(1.1);
 }

@@ -31,7 +31,7 @@ include_once '../services/connection.php';
     $evento=$evento->fetchAll(PDO::FETCH_ASSOC);
     foreach ($evento as $evento) {
     ?>
-    <div class="evento-individual" onclick="location.href='#modal'; modal_registrarse()" data-id="<?php echo $evento['id']; ?>" data-nombre="<?php echo $evento['nombre_even']; ?>">
+    <div class="evento-individual" data-id="<?php echo $evento['id']; ?>" data-nombre="<?php echo $evento['nombre_even']; ?>">
         <div class="evento-individual-contenido">
             <h1><?php echo $evento['nombre_even']; ?></h1>
             <p><?php echo $evento['descripcion_even']; ?></p>
@@ -62,7 +62,7 @@ include_once '../services/connection.php';
     ?>
 </div>
 <div class="region-registrarse modalmask" id="modal">
-  
+    <a href="#cerrar" class="cerrar" id="cerrar">x</a>
             <div class="registrarse resize">
                 <form action="../processes/login.php" method="POST"class="registrarse-form">
                     <h1 id="nom-even-modal"></h1>
@@ -70,7 +70,7 @@ include_once '../services/connection.php';
                     <input type="email" placeholder="admin1@gmail.com" class="registrarse-input_username" name="username">
                     <label for="password">Introduze tu contraseña</label>
                     <input type="password" placeholder="Password" class="registrarse-input_password" name="password">
-                    <input type="submit" name="enviar" value="Iniciar sesión" class="registrarse-btn_enviar">
+                    <input type="submit" name="enviar" value="Inscribirse" class="registrarse-btn_enviar">
                 </form>
                 
             </div>
