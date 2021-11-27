@@ -12,37 +12,72 @@ include_once '../services/connection.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/code.js"></script>
+    
 </head>
 <body>
     <div class="menu">
         <div class="logo"><a href="#"><img src="../img/logo.svg"></a></div>
     </div>
         
-    <div class="evento-todos">
+    <div class="evento-todos" id="evento-todos">
         <h1>Actividades destacadas de los próximos días </h1>
 
     
 <?php
-    $evento=$pdo->prepare("SELECT * from tbl_evento");
+    $evento=$pdo->prepare("SELECT * FROM `tbl_evento` ORDER BY tbl_evento.fecha_ini_even ASC");
     $evento->execute();
     $evento=$evento->fetchAll(PDO::FETCH_ASSOC);
     foreach ($evento as $evento) {
     ?>
-    <div class="evento-individual">
+    <div class="evento-individual" data-id="<?php echo $evento['id']; ?>" data-nombre="<?php echo $evento['nombre_even']; ?>">
         <div class="evento-individual-contenido">
             <h1><?php echo $evento['nombre_even']; ?></h1>
             <p><?php echo $evento['descripcion_even']; ?></p>
+            <?php
+            if ($evento['fecha_fin_even']==null or $evento['fecha_fin_even']==$evento['fecha_ini_even']) {
+                ?><p><strong>Cuando:</strong> El <?php echo $evento['fecha_ini_even']; ?></p>
+                <?php
+            }
+            else{
+                ?><p><strong>Cuando:</strong> De <?php echo $evento['fecha_ini_even']; ?> a <?php echo $evento['fecha_fin_even']; ?></p>
+                <?php
+            }
+            ?>
+            <p><strong>Donde:</strong> En <?php echo $evento['lugar_even']; ?></p>
+            
+        </div>
+        <div class="evento-individual-imagen">
+            <img src="../img/even_img/<?php echo $evento['img_even']; ?>" width="400vh" height="300vh">
         </div>
         <div class="inscribir"><button type='button' class='btn btn-light btn-lg' >Inscribirte</button></div>
         
         
     </div>
     
+    
     <?php
         }
     ?>
-
 </div>
+<div class="region-registrarse modalmask" id="modal">
+    <a href="#cerrar" class="cerrar" id="cerrar">x</a>
+            <div class="registrarse resize">
+                <form action="../processes/login.php" method="POST"class="registrarse-form">
+                    <h1 id="nom-even-modal"></h1>
+                    <label for="username">Introduze tu correo</label>
+                    <input type="email" placeholder="admin1@gmail.com" class="registrarse-input_username" name="username">
+                    <label for="password">Introduze tu contraseña</label>
+                    <input type="password" placeholder="Password" class="registrarse-input_password" name="password">
+                    <input type="submit" name="enviar" value="Inscribirse" class="registrarse-btn_enviar">
+                </form>
+                
+            </div>
+      
+    </div>
+
+
                 
 </body>
 </html>

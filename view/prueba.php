@@ -14,7 +14,7 @@
         <input type="email" name="correo">
         <label for="dni">DNI/NIE</label>
         <input type="text" name="dni">
-        <input type="hidden" name="evento" value="1">
+        <input type="hidden" name="evento" value="6">
         <input type="submit" value="Apuntarte">
     </form>
 </body>
