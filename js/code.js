@@ -19,6 +19,8 @@ $(document).ready(function() {
     $(".boton-salir").click(function() {
         document.getElementsByClassName("registrado")[0].style.opacity = 0
         document.getElementsByClassName("registrado")[0].style.pointerEvents = "none"
+            //var url = window.location.href;
+        window.history.pushState({}, document.title, "/" + "DAW/proyectos/aplicacion-ayuntamiento/View/form.php");
     });
 
 
