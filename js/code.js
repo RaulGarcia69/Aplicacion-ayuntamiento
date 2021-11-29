@@ -16,5 +16,10 @@ $(document).ready(function() {
         document.getElementsByTagName("html")[0].style.overflowY = "scroll"
     });
 
+    $(".boton-salir").click(function() {
+        document.getElementsByClassName("registrado")[0].style.opacity = 0
+        document.getElementsByClassName("registrado")[0].style.pointerEvents = "none"
+    });
+
 
 });

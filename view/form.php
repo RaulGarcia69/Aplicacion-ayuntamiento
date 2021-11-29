@@ -83,9 +83,10 @@ include_once '../services/connection.php';
     if (isset($_REQUEST['registrado'])) {
         ?>
         <div class="region-registrarse modalmask registrado" id="registrado">
-            <div class="registrarse resize">
+            <div class="texto-registrarse-modal">
                 <div class="texto-registrarse">
                     <h1>Te has inscrito correctamente.</h1>
+                    <button type='button' class='btn btn-primary btn-lg boton-salir' >Continuar</button>
                 </div>
             </div>
         </div>
@@ -93,9 +94,10 @@ include_once '../services/connection.php';
     }elseif (isset($_REQUEST['evento-lleno'])) {
         ?>
         <div class="region-registrarse modalmask registrado" id="evento-lleno">
-            <div class="registrarse resize">
+            <div class="texto-registrarse-modal">
                 <div class="texto-registrarse">
                     <h1>Error. El evento ya esta lleno.</h1>
+                   <button type='button' class='btn btn-primary btn-lg boton-salir' >Continuar</button>
                 </div>
             </div>
         </div>
@@ -103,9 +105,10 @@ include_once '../services/connection.php';
     }elseif (isset($_REQUEST['ya-registrado'])) {
         ?>
         <div class="region-registrarse modalmask registrado" id="ya-registrado">
-            <div class="registrarse resize">
+            <div class="texto-registrarse-modal">
                 <div class="texto-registrarse">
                     <h1>Error. Ya estabas inscrito en el evento.</h1>
+                    <button type='button' class='btn btn-primary btn-lg boton-salir' >Continuar</button>
                 </div>
             </div>
         </div>
