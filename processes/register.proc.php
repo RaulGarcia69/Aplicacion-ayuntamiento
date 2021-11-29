@@ -53,6 +53,7 @@ foreach ($eve as $eve)
                     $evensum->bindParam(1, $eve['id']);
                     $evensum->bindParam(2, $eve['id']);
                     $evensum->execute();
+                    header("Location:../view/form.php?registrado=si");
                 }
             else 
                 {
@@ -83,6 +84,7 @@ foreach ($eve as $eve)
                             $evensum->bindParam(1, $eve['id']);
                             $evensum->bindParam(2, $eve['id']);
                             $evensum->execute();
+                            header("Location:../view/form.php?registrado=si");
                         }
                     else
                         {
@@ -90,11 +92,10 @@ foreach ($eve as $eve)
                             header("Location:../view/form.php?ya-registrado=si");
                         }
                 }
-            header("Location:../view/login.php");
         }
         else
         {
             //no se pueden inscribir mas
-            header("Location:../view/login.php");
+            header("Location:../view/form.php?evento-lleno=si");
         }
     }

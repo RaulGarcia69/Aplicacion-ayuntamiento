@@ -3,6 +3,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -434,7 +438,43 @@ input {
     transform: scale(1.1);
 }
 
+#nom-even-modal {
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
 .registrado {
     opacity: 1;
     pointer-events: auto;
+}
+
+.texto-registrarse-modal {
+    top: 20%;
+    left: 30%;
+    position: absolute;
+    font-size: 2.3vh;
+    color: black;
+}
+
+.texto-registrarse {
+    background-color: white;
+    width: 600px;
+    height: 220px;
+    border-radius: 4px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.texto-registrarse button {
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+.texto-registrarse h1 {
+    margin-left: 10%;
+    padding-top: 5%;
 }
