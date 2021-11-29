@@ -191,6 +191,11 @@ input[type=text]:hover::placeholder {
     transition: 0.5s;
 }
 
+input[type=text]:focus {
+    outline: none;
+    color: black;
+}
+
 input {
     color: black;
     transition: 0.5s;
@@ -427,4 +432,9 @@ input {
     text-decoration: none;
     color: white;
     transform: scale(1.1);
+}
+
+.registrado {
+    opacity: 1;
+    pointer-events: auto;
 }

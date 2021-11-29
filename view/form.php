@@ -64,7 +64,7 @@ include_once '../services/connection.php';
 <div class="region-registrarse modalmask" id="modal">
     <a href="#cerrar" class="cerrar" id="cerrar">x</a>
             <div class="registrarse resize">
-                <form action="../processes/login.php" method="POST"class="registrarse-form">
+                <form action="form.php" method="POST"class="registrarse-form">
                     <h1 id="nom-even-modal"></h1>
                     <label for="username">Introduze tu correo</label>
                     <input type="email" placeholder="admin1@gmail.com" class="registrarse-input_username" name="username">
@@ -75,7 +75,39 @@ include_once '../services/connection.php';
                 
             </div>
       
-    </div>
+</div>
+<?php
+    if (isset($_REQUEST['registrado'])) {
+        ?>
+        <div class="region-registrarse modalmask registrado" id="registado">
+            <div class="registrarse resize">
+                    <h1>Te has registrado</h1>
+                
+            </div>
+      
+</div>
+    <?php
+    }elseif (isset($_REQUEST['evento-lleno'])) {
+        ?>
+        <div class="region-registrarse modalmask registrado" id="evento-lleno">
+                    <h1>Error. El evento ya esta lleno.</h1>
+                
+            </div>
+      
+</div>
+<?php
+    }elseif (isset($_REQUEST['ya-registrado'])) {
+        ?>
+        <div class="region-registrarse modalmask registrado" id="ya-registrado">
+            <div class="registrarse resize">
+                    <h1>Error. Ya estas inscrito en el evento.</h1>
+            </div>
+      
+</div>
+<?php
+    }
+?>
+
 
 
                 

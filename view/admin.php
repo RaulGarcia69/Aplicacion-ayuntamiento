@@ -18,7 +18,7 @@ $evento_id = $_REQUEST['id'];
 <div class="atras"><a href="evento.admin.php"><img src="../img/back.png" ></a></div>
 <div class="logout"><a href="../processes/kill-login.php"><img src="../img/logout.png" ></a></div>
 <div class="historial">
-    <table class="table table-hover table-borderless">
+    <table class="table table-hover">
     <thead class="thead-dark">
         <tr><form action="admin.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $evento_id?>">
