@@ -64,12 +64,15 @@ include_once '../services/connection.php';
 <div class="region-registrarse modalmask" id="modal">
     <a href="#cerrar" class="cerrar" id="cerrar">x</a>
             <div class="registrarse resize">
-                <form action="form.php" method="POST"class="registrarse-form">
+                <form action="../processes/register.proc.php" method="POST"class="registrarse-form">
                     <h1 id="nom-even-modal"></h1>
-                    <label for="username">Introduze tu correo</label>
-                    <input type="email" placeholder="admin1@gmail.com" class="registrarse-input_username" name="username">
-                    <label for="password">Introduze tu contraseña</label>
-                    <input type="password" placeholder="Password" class="registrarse-input_password" name="password">
+                    <label for="name">Introduce tu nombre</label>
+                    <input type="text" placeholder="Nombre" class="registrarse-input_username" name="name">
+                    <label for="email">Introduce tu correo</label>
+                    <input type="email" placeholder="correo@correo.com" class="registrarse-input_username" name="email">
+                    <label for="dni">Introduce tu DNI</label>
+                    <input type="text" placeholder="DNI" class="registrarse-input_username" name="dni">
+                    <input type="hidden" name="evento" id="eventoname">
                     <input type="submit" name="enviar" value="Inscribirse" class="registrarse-btn_enviar">
                 </form>
                 

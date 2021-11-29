@@ -1,7 +1,7 @@
 <?php 
 include '../services/connection.php';
-$nombre = $_REQUEST['nombre'];
-$correo = $_REQUEST['correo'];
+$nombre = $_REQUEST['name'];
+$correo = $_REQUEST['email'];
 $dni = $_REQUEST['dni'];
 $evento = $_REQUEST['evento'];
 
@@ -87,7 +87,7 @@ foreach ($eve as $eve)
                     else
                         {
                             //ya estaba inscrito
-                            header("Location:../view/login.php");
+                            header("Location:../view/form.php?ya-registrado=si");
                         }
                 }
             header("Location:../view/login.php");
