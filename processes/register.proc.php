@@ -13,6 +13,7 @@ $eve->execute();
 $eve=$eve->fetchAll(PDO::FETCH_ASSOC);
 foreach ($eve as $eve) 
     {
+        $nomeve=$eve['nombre_even'];
         if ($eve['capacidad_even']<$eve['capacidad_max_even'])
         {
             //se puede inscribir
@@ -53,7 +54,7 @@ foreach ($eve as $eve)
                     $evensum->bindParam(1, $eve['id']);
                     $evensum->bindParam(2, $eve['id']);
                     $evensum->execute();
-                    header("Location:../view/form.php?registrado=si");
+                    header("Location:../view/form.php?registrado={$nomeve}");
                 }
             else 
                 {
@@ -84,18 +85,18 @@ foreach ($eve as $eve)
                             $evensum->bindParam(1, $eve['id']);
                             $evensum->bindParam(2, $eve['id']);
                             $evensum->execute();
-                            header("Location:../view/form.php?registrado=si");
+                            header("Location:../view/form.php?registrado={$nomeve}");
                         }
                     else
                         {
                             //ya estaba inscrito
-                            header("Location:../view/form.php?ya-registrado=si");
+                            header("Location:../view/form.php?ya-registrado={$nomeve}");
                         }
                 }
         }
         else
         {
             //no se pueden inscribir mas
-            header("Location:../view/form.php?evento-lleno=si");
+            header("Location:../view/form.php?evento-lleno={$nomeve}");
         }
     }
