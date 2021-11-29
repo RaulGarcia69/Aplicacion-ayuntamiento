@@ -66,11 +66,11 @@ include_once '../services/connection.php';
             <div class="registrarse resize">
                 <form action="../processes/register.proc.php" method="POST"class="registrarse-form">
                     <h1 id="nom-even-modal"></h1>
-                    <label for="name">Introduce tu nombre</label>
+                    <label for="name" class="registrarse-input_username">Introduce tu nombre</label>
                     <input type="text" placeholder="Nombre" class="registrarse-input_username" name="name">
-                    <label for="email">Introduce tu correo</label>
+                    <label for="email" class="registrarse-input_username">Introduce tu correo</label>
                     <input type="email" placeholder="correo@correo.com" class="registrarse-input_username" name="email">
-                    <label for="dni">Introduce tu DNI</label>
+                    <label for="dni" class="registrarse-input_username">Introduce tu DNI</label>
                     <input type="text" placeholder="DNI" class="registrarse-input_username" name="dni">
                     <input type="hidden" name="evento" id="eventoname">
                     <input type="submit" name="enviar" value="Inscribirse" class="registrarse-btn_enviar">
