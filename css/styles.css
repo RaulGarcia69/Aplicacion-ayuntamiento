@@ -3,6 +3,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -434,7 +438,25 @@ input {
     transform: scale(1.1);
 }
 
+#nom-even-modal {
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
 .registrado {
     opacity: 1;
     pointer-events: auto;
+}
+
+.texto-registrarse {
+    background-color: white;
+    width: 800px;
+    height: 500px;
+    border-radius: 4px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
