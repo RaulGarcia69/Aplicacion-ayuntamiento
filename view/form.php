@@ -78,7 +78,39 @@ include_once '../services/connection.php';
                 
             </div>
       
-    </div>
+</div>
+<?php
+    if (isset($_REQUEST['registrado'])) {
+        ?>
+        <div class="region-registrarse modalmask registrado" id="registado">
+            <div class="registrarse resize">
+                    <h1>Te has registrado</h1>
+                
+            </div>
+      
+</div>
+    <?php
+    }elseif (isset($_REQUEST['evento-lleno'])) {
+        ?>
+        <div class="region-registrarse modalmask registrado" id="evento-lleno">
+                    <h1>Error. El evento ya esta lleno.</h1>
+                
+            </div>
+      
+</div>
+<?php
+    }elseif (isset($_REQUEST['ya-registrado'])) {
+        ?>
+        <div class="region-registrarse modalmask registrado" id="ya-registrado">
+            <div class="registrarse resize">
+                    <h1>Error. Ya estas inscrito en el evento.</h1>
+            </div>
+      
+</div>
+<?php
+    }
+?>
+
 
 
                 
