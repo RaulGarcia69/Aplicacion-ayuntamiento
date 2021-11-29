@@ -82,29 +82,35 @@ include_once '../services/connection.php';
 <?php
     if (isset($_REQUEST['registrado'])) {
         ?>
+        <form action="../processes/register.proc.php" method="POST"class="registrarse-form">
         <div class="region-registrarse modalmask registrado" id="registado">
             <div class="registrarse resize">
                     <h1>Te has registrado</h1>
                 
             </div>
+            </form>
       
 </div>
     <?php
     }elseif (isset($_REQUEST['evento-lleno'])) {
         ?>
+        <form action="../processes/register.proc.php" method="POST"class="registrarse-form">
         <div class="region-registrarse modalmask registrado" id="evento-lleno">
                     <h1>Error. El evento ya esta lleno.</h1>
                 
             </div>
+        </form>
       
 </div>
 <?php
     }elseif (isset($_REQUEST['ya-registrado'])) {
         ?>
+        <form action="../processes/register.proc.php" method="POST"class="registrarse-form">
         <div class="region-registrarse modalmask registrado" id="ya-registrado">
             <div class="registrarse resize">
                     <h1>Error. Ya estas inscrito en el evento.</h1>
             </div>
+    </form>
       
 </div>
 <?php

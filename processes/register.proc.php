@@ -90,11 +90,11 @@ foreach ($eve as $eve)
                             header("Location:../view/form.php?ya-registrado=si");
                         }
                 }
-            header("Location:../view/login.php");
+            header("Location:../view/form.php?registrado=si");
         }
         else
         {
             //no se pueden inscribir mas
-            header("Location:../view/login.php");
+            header("Location:../view/form.php?evento-lleno=si");
         }
     }
