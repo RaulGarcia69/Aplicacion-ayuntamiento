@@ -14,11 +14,14 @@ $evento_id = $_REQUEST['id'];
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
-<body>
+<body class="body-admin">
 <div class="atras"><a href="evento.admin.php"><img src="../img/back.png" ></a></div>
 <div class="logout"><a href="../processes/kill-login.php"><img src="../img/logout.png" ></a></div>
+<div class="menu">
+        <div class="logo2"><img src="../img/logo.svg"></div>
+    </div>
 <div class="historial">
-    <table class="table table-hover">
+    <table class="table tablehover">
     <thead class="thead-dark">
         <tr><form action="admin.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $evento_id?>">
@@ -66,9 +69,9 @@ $evento_id = $_REQUEST['id'];
         <tbody>
         <?php foreach ($voluntarios as $voluntarios) { ?>
                 <tr>
-                    <td><?php echo $voluntarios['nombre_vol'] ?></td>
-                    <td><?php echo $voluntarios['correo_vol'] ?></td>
-                    <td><?php echo $voluntarios['dni_vol'] ?></td>
+                    <td id="textocolor"><?php echo $voluntarios['nombre_vol'] ?></td>
+                    <td id="textocolor"><?php echo $voluntarios['correo_vol'] ?></td>
+                    <td id="textocolor"><?php echo $voluntarios['dni_vol'] ?></td>
                     <td></td>
                 </tr>
 

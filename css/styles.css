@@ -30,6 +30,12 @@ p {
     right: 30px;
 }
 
+.logo2 {
+    position: absolute;
+    top: 120px;
+    left: 45%;
+}
+
 .evento-todos {
     background-color: brown;
     padding-top: 2%;
@@ -486,4 +492,26 @@ input {
     margin: 0;
     justify-content: left;
     align-items: center;
+}
+
+.body-admin {}
+
+.historial {
+    border-color: grey;
+    border-style: solid;
+    background-color: brown;
+    color: white
+}
+
+.atras {
+    background-color: white;
+}
+
+#textocolor {
+    color: white
+}
+
+.tablehover tr:hover {
+    transition: all 0.5s;
+    background-color: rgb(128, 28, 28);
 }
