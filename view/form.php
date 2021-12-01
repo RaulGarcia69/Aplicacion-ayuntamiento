@@ -81,35 +81,38 @@ include_once '../services/connection.php';
 </div>
 <?php
     if (isset($_REQUEST['registrado'])) {
+        $nomeve=$_REQUEST['registrado'];
         ?>
         <div class="region-registrarse modalmask registrado" id="registrado">
             <div class="texto-registrarse-modal">
                 <div class="texto-registrarse">
-                    <h1>Te has inscrito correctamente.</h1>
+                    <h1>Te has inscrito a <?php echo $nomeve; ?> correctamente.</h1>
                     <button type='button' class='btn btn-primary btn-lg boton-salir' >Continuar</button>
                 </div>
             </div>
         </div>
     <?php
     }elseif (isset($_REQUEST['evento-lleno'])) {
+        $nomeve=$_REQUEST['evento-lleno'];
         ?>
         <form action="../processes/register.proc.php" method="POST"class="registrarse-form">
         <div class="region-registrarse modalmask registrado" id="evento-lleno">
             <div class="texto-registrarse-modal">
                 <div class="texto-registrarse">
-                    <h1>Error. El evento ya esta lleno.</h1>
+                    <h1>Error. <?php echo $nomeve; ?> ya esta lleno.</h1>
                    <button type='button' class='btn btn-primary btn-lg boton-salir' >Continuar</button>
                 </div>
             </div>
         </div>
 <?php
     }elseif (isset($_REQUEST['ya-registrado'])) {
+        $nomeve=$_REQUEST['ya-registrado'];
         ?>
         <form action="../processes/register.proc.php" method="POST"class="registrarse-form">
         <div class="region-registrarse modalmask registrado" id="ya-registrado">
             <div class="texto-registrarse-modal">
                 <div class="texto-registrarse">
-                    <h1>Error. Ya estabas inscrito en el evento.</h1>
+                    <h1>Error. Ya estabas inscrito en <?php echo $nomeve; ?>.</h1>
                     <button type='button' class='btn btn-primary btn-lg boton-salir' >Continuar</button>
                 </div>
             </div>
