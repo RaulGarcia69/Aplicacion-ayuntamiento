@@ -12,10 +12,12 @@ include_once '../services/connection.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../js/code.js"></script>
 </head>
 <body class="body-even-admin">
     <div class="logout"><a href="../processes/kill-login.php"><img src="../img/logout.png" ></a></div>
+    <div class="crear-evento"><button class="btn btn-success">Crear actividad</button></div>
     <div class="visualizar-eventos">
     <?php
 
@@ -48,6 +50,48 @@ include_once '../services/connection.php';
     }
     ?>
     </div>
+    <div class="region-registrarse modalmask" id="modal">
+    <a href="#cerrar" class="cerrar" id="cerrar">x</a>
+            <div class="registrarse resize">
+                <form action="../processes/crear.evento.php" method="POST"class="registrarse-form">
+                <div class="nom-even"><h1>Crear Actividad</h1></div>
+                <div class="form-crear-1 crear-evento-form">
+                        <div class="input-espacio">
+                            <label for="name">Nombre Actividad</label>
+                            <input type="text" class="registrarse-input_username" name="name">
+                        </div>
+                        <div class="input-espacio">
+                            <label for="email">Descripcion Actividad</label>
+                            <textarea name="textarea" class="textarea registrarse-input_username"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-crear-2 crear-evento-form">
+                        <div class="input-espacio">
+                            <label for="dni">Lugar Actividad</label>
+                            <input type="text" class="registrarse-input_username" name="dni">
+                        </div>
+                        <div class="input-espacio">
+                            <label for="dni">Capacidad Máxima Actividad</label>
+                            <input type="text" class="registrarse-input_username" name="dni">
+                        </div>
+                    </div>
+                    <div class="form-crear-3 crear-evento-form">
+                        <div class="input-espacio">
+                            <label for="dni">Fecha inicio Actividad</label>
+                            <input type="date" name="dni">
+                        </div>
+                        <div class="input-espacio">
+                            <label for="dni">Fecha fin Actividad</label>
+                            <input type="date" name="dni">
+                        </div>
+                    </div>
+                    
+                    <input type="submit" name="enviar" value="Crear" class="registrarse-btn_enviar">
+                </form>
+                
+            </div>
+      
+</div>
     
 </body>
 </html>

@@ -24,4 +24,12 @@ $(document).ready(function() {
     });
 
 
+    //admin
+    $(".crear-evento").click(function() {
+        document.getElementsByClassName("modalmask")[0].style.opacity = 1
+        document.getElementsByClassName("modalmask")[0].style.pointerEvents = "auto"
+
+    });
+
+
 });

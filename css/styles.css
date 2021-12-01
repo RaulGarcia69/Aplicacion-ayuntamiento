@@ -311,6 +311,7 @@ input {
     position: absolute;
     font-size: 2.3vh;
     color: black;
+    text-align: center;
 }
 
 .region-registrarse form.registrarse-form {
@@ -351,7 +352,6 @@ input {
 }
 
 .region-registrarse form.registrarse-form input {
-    padding: 10px;
     margin: 10px 10px 20px 20px;
     border: none;
     border-bottom: 3px solid brown;
@@ -369,6 +369,7 @@ input {
 
 .region-registrarse form.registrarse-form input::-webkit-input-placeholder {
     transition: 0.5s;
+    text-align: center;
 }
 
 .region-registrarse form.registrarse-form input[type='submit'] {
@@ -438,9 +439,10 @@ input {
     transform: scale(1.1);
 }
 
-#nom-even-modal {
-    margin-left: 4%;
-    margin-right: 4%;
+.nom-even {
+    position: absolute;
+    top: 2%;
+    width: 80vh;
 }
 
 .registrado {
@@ -477,4 +479,97 @@ input {
 .texto-registrarse h1 {
     margin-left: 10%;
     padding-top: 5%;
+}
+
+.form-registrar-1 {
+    position: absolute;
+    top: 20%;
+    left: 15vh;
+}
+
+.form-registrar-2 {
+    position: absolute;
+    top: 20%;
+    left: 60vh;
+}
+
+.registrarse-btn_enviar {
+    position: absolute;
+    bottom: 30%;
+}
+
+#copyright {
+    position: absolute;
+    bottom: 40%;
+    width: 70vh;
+    font-size: 2vh;
+}
+
+.input-espacio {
+    padding-bottom: 10%;
+}
+
+
+/*Admin*/
+
+.crear-evento {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.crear-evento button {
+    transform: scale(1.3);
+    color: black;
+    transition: all 0.5s;
+    border: 5px solid rgb(128, 28, 28);
+    background-color: brown;
+}
+
+.crear-evento button:hover {
+    transform: scale(1.4);
+    color: black;
+    border: 5px solid rgb(128, 28, 28);
+    background-color: rgb(141, 30, 30);
+}
+
+.crear-evento button:focus {
+    transform: scale(1.4);
+    color: black;
+    border: 5px solid rgb(128, 28, 28);
+    background-color: rgb(141, 30, 30);
+}
+
+.textarea {
+    width: 250px;
+    height: 150px;
+    border: 3px solid brown;
+    margin-bottom: 3%;
+    margin-top: 12%;
+}
+
+.textarea:focus {
+    outline: none;
+}
+
+.crear-evento-form {
+    top: 15%;
+}
+
+.form-crear-1 {
+    position: absolute;
+    top: 15%;
+    left: 4vh;
+}
+
+.form-crear-2 {
+    position: absolute;
+    top: 15%;
+    left: 40vh;
+}
+
+.form-crear-3 {
+    position: absolute;
+    top: 15%;
+    left: 80vh;
 }
