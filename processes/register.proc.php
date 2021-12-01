@@ -53,6 +53,7 @@ foreach ($eve as $eve)
                     $evensum->bindParam(1, $eve['id']);
                     $evensum->bindParam(2, $eve['id']);
                     $evensum->execute();
+                    header("Location:../view/form.php?registrado=si");
                 }
             else 
                 {
@@ -83,6 +84,7 @@ foreach ($eve as $eve)
                             $evensum->bindParam(1, $eve['id']);
                             $evensum->bindParam(2, $eve['id']);
                             $evensum->execute();
+                            header("Location:../view/form.php?registrado=si");
                         }
                     else
                         {

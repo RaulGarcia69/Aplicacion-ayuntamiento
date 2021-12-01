@@ -5,7 +5,7 @@ $(document).ready(function() {
         document.getElementsByTagName("html")[0].style.overflow = "hidden"
         var var1 = $(this).attr('data-id');
         var var2 = $(this).attr('data-nombre');
-        $("#nom-even-modal").text("Registarse para " + var2);
+        $("#nom-even-modal").text("Inscribirse en " + var2);
         $("#eventoname").val(var1);
     });
 
@@ -14,6 +14,11 @@ $(document).ready(function() {
         document.getElementsByClassName("modalmask")[0].style.opacity = 0
         document.getElementsByClassName("modalmask")[0].style.pointerEvents = "none"
         document.getElementsByTagName("html")[0].style.overflowY = "scroll"
+    });
+
+    $(".boton-salir").click(function() {
+        document.getElementsByClassName("registrado")[0].style.opacity = 0
+        document.getElementsByClassName("registrado")[0].style.pointerEvents = "none"
     });
 
 

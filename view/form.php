@@ -51,7 +51,7 @@ include_once '../services/connection.php';
         <div class="evento-individual-imagen">
             <img src="../img/even_img/<?php echo $evento['img_even']; ?>" width="400vh" height="300vh">
         </div>
-        <div class="inscribir"><button type='button' class='btn btn-light btn-lg' >Inscribirte</button></div>
+        <div class="inscribir"><button type='button' class='btn btn-light btn-lg' >Inscribirse</button></div>
         
         
     </div>
@@ -82,37 +82,38 @@ include_once '../services/connection.php';
 <?php
     if (isset($_REQUEST['registrado'])) {
         ?>
-        <form action="../processes/register.proc.php" method="POST"class="registrarse-form">
-        <div class="region-registrarse modalmask registrado" id="registado">
-            <div class="registrarse resize">
-                    <h1>Te has registrado</h1>
-                
+        <div class="region-registrarse modalmask registrado" id="registrado">
+            <div class="texto-registrarse-modal">
+                <div class="texto-registrarse">
+                    <h1>Te has inscrito correctamente.</h1>
+                    <button type='button' class='btn btn-primary btn-lg boton-salir' >Continuar</button>
+                </div>
             </div>
-            </form>
-      
-</div>
+        </div>
     <?php
     }elseif (isset($_REQUEST['evento-lleno'])) {
         ?>
         <form action="../processes/register.proc.php" method="POST"class="registrarse-form">
         <div class="region-registrarse modalmask registrado" id="evento-lleno">
+            <div class="texto-registrarse-modal">
+                <div class="texto-registrarse">
                     <h1>Error. El evento ya esta lleno.</h1>
-                
+                   <button type='button' class='btn btn-primary btn-lg boton-salir' >Continuar</button>
+                </div>
             </div>
-        </form>
-      
-</div>
+        </div>
 <?php
     }elseif (isset($_REQUEST['ya-registrado'])) {
         ?>
         <form action="../processes/register.proc.php" method="POST"class="registrarse-form">
         <div class="region-registrarse modalmask registrado" id="ya-registrado">
-            <div class="registrarse resize">
-                    <h1>Error. Ya estas inscrito en el evento.</h1>
+            <div class="texto-registrarse-modal">
+                <div class="texto-registrarse">
+                    <h1>Error. Ya estabas inscrito en el evento.</h1>
+                    <button type='button' class='btn btn-primary btn-lg boton-salir' >Continuar</button>
+                </div>
             </div>
-    </form>
-      
-</div>
+        </div>
 <?php
     }
 ?>
