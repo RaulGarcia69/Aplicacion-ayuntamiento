@@ -12,6 +12,7 @@ $path="../img/even_img/".$_FILES['file']['name'];
 
 if (move_uploaded_file($_FILES['file']['tmp_name'],$path)) {
     try{
+        $db->beginTransaction();
         $query="INSERT INTO tbl_evento(nombre_even, descripcion_even, lugar_even, fecha_ini_even, fecha_fin_even, capacidad_max_even, img_even) VALUES(?,?,?,?,?,?,?)";
         $stmt=$pdo->prepare($query);
         $stmt->bindParam(1, $nombre);
@@ -22,9 +23,12 @@ if (move_uploaded_file($_FILES['file']['tmp_name'],$path)) {
         $stmt->bindParam(6, $capacidad);
         $stmt->bindParam(7, $file);
         $stmt->execute();
-        echo "bien";
+
+        $db->commit();
+        header("Location:../view/evento.admin.php");
     }catch(\Throwable $th){
         unlink($path);
+        $db->rollback();
         header("Location:../view/evento.admin.php");
     }
 }
