@@ -1,3 +1,3 @@
 <?php
-header("Location:View/form.php");
+header("Location:View/demo.php");
 ?>

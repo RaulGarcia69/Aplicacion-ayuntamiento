@@ -50,43 +50,47 @@ include_once '../services/connection.php';
     }
     ?>
     </div>
-    <div class="region-registrarse modalmask" id="modal">
-    <a href="#cerrar" class="cerrar" id="cerrar">x</a>
-            <div class="registrarse resize">
-                <form action="../processes/crear.evento.php" method="POST"class="registrarse-form">
+    <div class="region-registrarse modalmask" id="region-crear">
+    <a href="#cerrar" class="cerrar-evento-form" id="cerrar">x</a>
+            <div class="registrarse resize" id="crear-evento-form">
+                <form action="../processes/crear.evento.php" method="POST"class="registrarse-form" id="crear-evento-posicion">
                 <div class="nom-even"><h1>Crear Actividad</h1></div>
-                <div class="form-crear-1 crear-evento-form">
+                    <div class="form-crear-1 crear-evento-form">
                         <div class="input-espacio">
                             <label for="name">Nombre Actividad</label>
-                            <input type="text" class="registrarse-input_username" name="name">
-                        </div>
-                        <div class="input-espacio">
-                            <label for="email">Descripcion Actividad</label>
-                            <textarea name="textarea" class="textarea registrarse-input_username"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-crear-2 crear-evento-form">
-                        <div class="input-espacio">
-                            <label for="dni">Lugar Actividad</label>
-                            <input type="text" class="registrarse-input_username" name="dni">
+                            <input type="text" class="registrarse-input_username form-evento-input" name="nombre">
                         </div>
                         <div class="input-espacio">
                             <label for="dni">Capacidad Máxima Actividad</label>
-                            <input type="text" class="registrarse-input_username" name="dni">
+                            <input type="text" class="registrarse-input_username" name="capacidad_max">
+                        </div>
+                    </div>
+                    <div class="form-crear-2 crear-evento-form">
+                    <div class="input-espacio">
+                            <label for="dni">Fecha inicio Actividad</label>
+                            <input type="date" name="fecha_ini">
+                        </div>
+                        <div class="input-espacio">
+                            <label for="dni">Lugar Actividad</label>
+                            <input type="text" class="registrarse-input_username" name="lugar">
                         </div>
                     </div>
                     <div class="form-crear-3 crear-evento-form">
                         <div class="input-espacio">
-                            <label for="dni">Fecha inicio Actividad</label>
-                            <input type="date" name="dni">
+                            <label for="dni">Fecha fin Actividad</label>
+                            <input type="date" name="fecha_fin">
                         </div>
                         <div class="input-espacio">
-                            <label for="dni">Fecha fin Actividad</label>
-                            <input type="date" name="dni">
+                            <label for="dni">Imagen Actividad</label>
+                            <input type="file" name="img" class="upload">
                         </div>
                     </div>
+                    <div class="form-crear-4 crear-evento-form">
+                        <label for="dni" id="label-textarea">Descripcion Actividad</label>
+                        <textarea name="descripcion" class="textarea"></textarea>
+                    </div>
                     
-                    <input type="submit" name="enviar" value="Crear" class="registrarse-btn_enviar">
+                    <input type="submit" name="enviar" value="Crear" class="registrarse-btn_enviar" id="crear-btn">
                 </form>
                 
             </div>
