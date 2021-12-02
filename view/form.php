@@ -80,7 +80,7 @@ include_once '../services/connection.php';
                         <label for="dni">Introduce tu DNI</label>
                         <input type="text" placeholder="DNI" class="registrarse-input_username" name="dni" id="dni">
                     </div>
-                    <p id="copyright">Copyright © 2021 Ayuntament Barcelona, All rights reserved.</p>
+                    <p id="copyright">Copyright © 2021 Ajuntament Barcelona, All rights reserved.</p>
                     <input type="hidden" name="evento" id="eventoname">
                     <input type="submit" name="enviar" value="Inscribirse" class="registrarse-btn_enviar">
                 </form>

@@ -19,7 +19,7 @@
                     <label for="username">Introduze tu correo</label>
                     <input type="email" placeholder="admin1@gmail.com" id="login_username" class="login-input_username" name="username">
                     <label for="password">Introduze tu contraseña</label>
-                    <input type="password" placeholder="Password" id="login_password" class="login-input_password" name="password">
+                    <input type="password" placeholder="1234" id="login_password" class="login-input_password" name="password">
                     <input type="submit" name="enviar" value="Iniciar sesión" id="login_btn_enviar" class="login-btn_enviar">
                 </form>
                 

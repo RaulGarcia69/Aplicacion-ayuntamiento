@@ -696,6 +696,21 @@ form#crear-evento-posicion input[type='file'] {
     height: 15vh;
 }
 
+#nom-even-modificar {
+    top: 1%;
+    width: 100vh;
+}
+
+#form-crear-1-mod,
+#form-crear-2-mod,
+#form-crear-3-mod {
+    top: 20%;
+}
+
+#form-crear-4-mod {
+    top: 48%;
+}
+
 
 /*demo*/
 
