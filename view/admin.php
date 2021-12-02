@@ -17,8 +17,12 @@ $evento_id = $_REQUEST['id'];
 <body>
 <div class="atras"><a href="evento.admin.php"><img src="../img/back.png" ></a></div>
 <div class="logout"><a href="../processes/kill-login.php"><img src="../img/logout.png" ></a></div>
+<div class="menu" id="admin">
+        <div class="logo2"><img src="../img/logo.svg"></div>
+    </div>
 <div class="historial">
-    <table class="table table-hover">
+    <div class="tabla">
+    <table class="table table-hover tabla-de-los-huevos">
     <thead class="thead-dark">
         <tr><form action="admin.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $evento_id?>">
@@ -76,6 +80,7 @@ $evento_id = $_REQUEST['id'];
         </tbody>
 
     </table>
+    </div>
 </div>
     
 </body>

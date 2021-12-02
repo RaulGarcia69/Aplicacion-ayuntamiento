@@ -6,7 +6,8 @@ $lugar = $_REQUEST['lugar'];
 $fecha_ini = $_REQUEST['fecha_ini'];
 $fecha_fin = $_REQUEST['fecha_fin'];
 $capacidad = $_REQUEST['capacidad_max'];
-$path=$_FILES['file']['name'];
+$file=$_FILES['file']['name'];
+$path="../img/even_img/".$_FILES['file']['name'];
 
 
 if (move_uploaded_file($_FILES['file']['tmp_name'],$path)) {
@@ -19,7 +20,7 @@ if (move_uploaded_file($_FILES['file']['tmp_name'],$path)) {
         $stmt->bindParam(4, $fecha_ini);
         $stmt->bindParam(5, $fecha_fin);
         $stmt->bindParam(6, $capacidad);
-        $stmt->bindParam(7, $path);
+        $stmt->bindParam(7, $file);
         $stmt->execute();
         echo "bien";
     }catch(\Throwable $th){

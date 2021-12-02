@@ -124,10 +124,13 @@ p {
     color: white;
 }
 
-.historial {
+.historial {}
+
+.tabla {
     margin-top: 5%;
     margin-left: 10%;
     width: 80%;
+    background-color: white;
 }
 
 .evento {
@@ -635,6 +638,16 @@ form#crear-evento-posicion input[type='file'] {
 
 #crear-btn {
     bottom: 15%;
+}
+
+.logo2 {
+    position: absolute;
+    top: 3%;
+    left: 45%;
+}
+
+#admin {
+    height: 15vh;
 }
 
 
