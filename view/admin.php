@@ -82,7 +82,7 @@ $evento_id = $_REQUEST['id'];
     </table>
     </div>
 </div>
-<div class="eliminar-evento"><button class="btn btn-danger btn-lg">Eliminar evento</button></div>
+<div class="eliminar-evento"><form action="../processes/eliminar.evento.php" method="POST"><button class="btn btn-danger btn-lg" type="submit" name="evento" value="<?php echo $evento_id; ?>">Eliminar evento</button></form></div>
     
 </body>
 </html>
