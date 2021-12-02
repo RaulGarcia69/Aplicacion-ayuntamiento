@@ -53,7 +53,7 @@ include_once '../services/connection.php';
     <div class="region-registrarse modalmask" id="region-crear">
     <a href="#cerrar" class="cerrar-evento-form" id="cerrar">x</a>
             <div class="registrarse resize" id="crear-evento-form">
-                <form action="../processes/crear.evento.php" method="POST"class="registrarse-form" id="crear-evento-posicion">
+                <form action="../processes/crear.evento.php" method="POST"class="registrarse-form" id="crear-evento-posicion" enctype="multipart/form-data">
                 <div class="nom-even"><h1>Crear Actividad</h1></div>
                     <div class="form-crear-1 crear-evento-form">
                         <div class="input-espacio">
@@ -62,7 +62,7 @@ include_once '../services/connection.php';
                         </div>
                         <div class="input-espacio">
                             <label for="dni">Capacidad Máxima Actividad</label>
-                            <input type="text" class="registrarse-input_username" name="capacidad_max">
+                            <input type="number" class="registrarse-input_username" min="1" name="capacidad_max">
                         </div>
                     </div>
                     <div class="form-crear-2 crear-evento-form">
@@ -82,7 +82,7 @@ include_once '../services/connection.php';
                         </div>
                         <div class="input-espacio">
                             <label for="dni">Imagen Actividad</label>
-                            <input type="file" name="img" class="upload">
+                            <input type="file" name="file" class="upload" accept="image/*">
                         </div>
                     </div>
                     <div class="form-crear-4 crear-evento-form">

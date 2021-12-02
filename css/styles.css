@@ -340,8 +340,8 @@ input {
 
 .region-registrarse form.registrarse-form {
     background-color: white;
-    width: 800px;
-    height: 500px;
+    width: 115vh;
+    height: 70vh;
     border-radius: 4px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -394,8 +394,8 @@ input {
 }
 
 .modalmask:target .resize {
-    width: 400px;
-    height: 200px;
+    width: 63.59vh;
+    height: 31.79vh;
 }
 
 .modalmask {
@@ -605,10 +605,6 @@ form#crear-evento-posicion {
 }
 
 form#crear-evento-posicion input[type='file'] {
-    border: none;
-}
-
-form#crear-evento-posicion input[type='date'] {
     border: none;
 }
 
