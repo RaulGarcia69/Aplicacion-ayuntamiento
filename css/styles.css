@@ -133,6 +133,15 @@ p {
     background-color: white;
 }
 
+.eliminar-evento {
+    margin-left: 43%;
+    margin-top: 2%;
+}
+
+#borde-tabla {
+    border: 8px solid #353A40;
+}
+
 .evento {
     margin-right: 3%;
     margin-bottom: 3%;

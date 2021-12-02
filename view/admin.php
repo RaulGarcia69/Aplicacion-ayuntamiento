@@ -22,7 +22,7 @@ $evento_id = $_REQUEST['id'];
     </div>
 <div class="historial">
     <div class="tabla">
-    <table class="table table-hover tabla-de-los-huevos">
+    <table class="table table-hover" id="borde-tabla">
     <thead class="thead-dark">
         <tr><form action="admin.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $evento_id?>">
@@ -82,6 +82,7 @@ $evento_id = $_REQUEST['id'];
     </table>
     </div>
 </div>
+<div class="eliminar-evento"><button class="btn btn-danger btn-lg">Eliminar evento</button></div>
     
 </body>
 </html>
