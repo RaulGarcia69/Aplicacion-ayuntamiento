@@ -5,9 +5,6 @@ $correo = $_REQUEST['email'];
 $dni = $_REQUEST['dni'];
 $evento = $_REQUEST['evento'];
 
-try {
-    $db->beginTransaction();
- 
 //puede inscribirse en el evento?
 $eve=$pdo->prepare("SELECT * FROM tbl_evento WHERE id=?");
 $eve->bindParam(1, $evento);
@@ -102,9 +99,4 @@ foreach ($eve as $eve)
             //no se pueden inscribir mas
             header("Location:../view/form.php?evento-lleno={$nomeve}");
         }
-    }
-    $db->commit();
-}
-catch (\Throwable $th) {
-    $db->rollback();
     }
