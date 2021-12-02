@@ -2,6 +2,11 @@
 <?php 
 include_once '../services/connection.php';
 $evento_id = $_REQUEST['id'];
+session_start();
+    if (!isset($_SESSION['admin'])) {
+        header("Location:../view/login.php");
+    }
+    else{
 ?>
 <html lang="en">
 <head>
@@ -14,7 +19,7 @@ $evento_id = $_REQUEST['id'];
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
-<body>
+<body class="body-admin">
 <div class="atras"><a href="evento.admin.php"><img src="../img/back.png" ></a></div>
 <div class="logout"><a href="../processes/kill-login.php"><img src="../img/logout.png" ></a></div>
 <div class="menu" id="admin">
@@ -83,6 +88,7 @@ $evento_id = $_REQUEST['id'];
     </div>
 </div>
 <div class="eliminar-evento"><form action="../processes/eliminar.evento.php" method="POST"><button class="btn btn-danger btn-lg" type="submit" name="evento" value="<?php echo $evento_id; ?>">Eliminar evento</button></form></div>
-    
+<div class="modificar-evento"><form action="../processes/modificar.evento.php" method="POST"><button class="btn btn-primary btn-lg" type="submit" name="evento" value="<?php echo $evento_id; ?>">Modificar evento</button><input type="hidden" name="evento" value="<?php echo $evento_id; ?>"></form></div>  
 </body>
 </html>
+<?php } ?>

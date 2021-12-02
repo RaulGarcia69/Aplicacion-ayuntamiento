@@ -64,21 +64,21 @@ include_once '../services/connection.php';
 <div class="region-registrarse modalmask" id="modal">
     <a href="#cerrar" class="cerrar" id="cerrar">x</a>
             <div class="registrarse resize">
-                <form action="../processes/register.proc.php" method="POST"class="registrarse-form">
+                <form action="../processes/register.proc.php" method="POST"class="registrarse-form" onsubmit="return validar_form()">
                     <div class="nom-even"><h1 id="nom-even-modal"></h1></div>
                     <div class="form-registrar-1">
                         <div class="input-espacio">
                             <label for="name">Introduce tu nombre</label>
-                            <input type="text" placeholder="Nombre" class="registrarse-input_username" name="name">
+                            <input type="text" placeholder="Nombre" class="registrarse-input_username" name="name" id="name">
                         </div>
                         <div class="input-espacio">
                             <label for="email">Introduce tu correo</label>
-                            <input type="email" placeholder="correo@correo.com" class="registrarse-input_username" name="email">
+                            <input type="email" placeholder="correo@correo.com" class="registrarse-input_username" name="email" id="email">
                         </div>
                     </div>
                     <div class="form-registrar-2">
                         <label for="dni">Introduce tu DNI</label>
-                        <input type="text" placeholder="DNI" class="registrarse-input_username" name="dni">
+                        <input type="text" placeholder="DNI" class="registrarse-input_username" name="dni" id="dni">
                     </div>
                     <p id="copyright">Copyright © 2021 Ayuntament Barcelona, All rights reserved.</p>
                     <input type="hidden" name="evento" id="eventoname">

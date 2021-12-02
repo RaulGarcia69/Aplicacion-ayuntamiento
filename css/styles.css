@@ -130,16 +130,44 @@ p {
     margin-top: 5%;
     margin-left: 10%;
     width: 80%;
-    background-color: white;
 }
 
 .eliminar-evento {
-    margin-left: 43%;
+    margin-left: 37%;
     margin-top: 2%;
+    float: left;
+}
+
+.modificar-evento {
+    margin-left: 3%;
+    margin-top: 2%;
+    float: left;
 }
 
 #borde-tabla {
-    border: 8px solid #353A40;
+    border: 8px solid rgb(128, 28, 28);
+    border-radius: 1%;
+    border-collapse: separate !important;
+}
+
+#borde-tabla thead th {
+    background: rgb(128, 28, 28);
+}
+
+#borde-tabla thead th {
+    border-color: rgb(128, 28, 28);
+}
+
+#borde-tabla td {
+    background-color: white;
+}
+
+#borde-tabla tr:hover td {
+    background-color: rgb(226, 217, 217);
+}
+
+.body-admin {
+    background-color: brown;
 }
 
 .evento {
@@ -195,16 +223,22 @@ p {
 }
 
 input[type=submit] {
-    color: grey;
+    background-color: brown;
+    border-color: brown;
+    border-radius: 10%;
 }
 
 input[type=submit]:hover {
-    color: rgb(99, 99, 99);
+    background-color: rgb(128, 28, 28);
 }
 
 input[type=text]:hover::placeholder {
     color: rgb(99, 99, 99);
     transition: 0.5s;
+}
+
+input[type=text]::placeholder {
+    padding-left: 1%;
 }
 
 input[type=text]:focus {
@@ -653,6 +687,11 @@ form#crear-evento-posicion input[type='file'] {
     position: absolute;
     top: 3%;
     left: 45%;
+}
+
+.logo2:hover {
+    opacity: 0.8;
+    transition: all 0.3s;
 }
 
 #admin {

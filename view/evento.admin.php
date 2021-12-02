@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+    if (!isset($_SESSION['admin'])) {
+        header("Location:../view/login.php");
+    }
+    else{
+?>
+
+
 <!DOCTYPE html>
 <?php 
 include_once '../services/connection.php';
@@ -53,12 +62,12 @@ include_once '../services/connection.php';
     <div class="region-registrarse modalmask" id="region-crear">
     <a href="#cerrar" class="cerrar-evento-form" id="cerrar">x</a>
             <div class="registrarse resize" id="crear-evento-form">
-                <form action="../processes/crear.evento.php" method="POST"class="registrarse-form" id="crear-evento-posicion" enctype="multipart/form-data">
+                <form action="../processes/crear.evento.php" method="POST"class="registrarse-form" id="crear-evento-posicion" enctype="multipart/form-data" onsubmit="return validar_admin()">
                 <div class="nom-even"><h1>Crear Actividad</h1></div>
                     <div class="form-crear-1 crear-evento-form">
                         <div class="input-espacio">
                             <label for="name">Nombre Actividad</label>
-                            <input type="text" class="registrarse-input_username form-evento-input" name="nombre">
+                            <input type="text" class="registrarse-input_username form-evento-input" name="nombre" id="nombre">
                         </div>
                         <div class="input-espacio">
                             <label for="dni">Capacidad Máxima Actividad</label>
@@ -87,7 +96,7 @@ include_once '../services/connection.php';
                     </div>
                     <div class="form-crear-4 crear-evento-form">
                         <label for="dni" id="label-textarea">Descripcion Actividad</label>
-                        <textarea name="descripcion" class="textarea"></textarea>
+                        <textarea name="descripcion" class="textarea" id="descripcion"></textarea>
                     </div>
                     
                     <input type="submit" name="enviar" value="Crear" class="registrarse-btn_enviar" id="crear-btn">
@@ -99,3 +108,5 @@ include_once '../services/connection.php';
     
 </body>
 </html>
+
+<?php } ?>

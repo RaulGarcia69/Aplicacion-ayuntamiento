@@ -33,3 +33,29 @@ $(document).ready(function() {
 
 
 });
+
+
+
+function validar_login() {
+    if (document.getElementById('login_username').value == '' || document.getElementById('login_password').value == '') {
+        return false
+    } else {
+        return true
+    }
+}
+
+function validar_form() {
+    if (document.getElementById('name').value == '' || document.getElementById('email').value == '' || document.getElementById('dni').value == '') {
+        return false
+    } else {
+        return true
+    }
+}
+
+function validar_admin() {
+    if (document.getElementById('nombre').value == '' || document.getElementById('descripcion').value == '') {
+        return false
+    } else {
+        return true
+    }
+}

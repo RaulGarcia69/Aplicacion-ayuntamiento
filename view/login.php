@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="../js/code.js"></script>
 </head>
 <body class="body-login">
     <div class="region-login">
   
             <div class="login">
-                <form action="../processes/login.php" method="POST"class="login-form">
+                <form action="../processes/login.php" method="POST"class="login-form" onsubmit="return validar_login()">
                     <label for="username">Introduze tu correo</label>
                     <input type="email" placeholder="admin1@gmail.com" id="login_username" class="login-input_username" name="username">
                     <label for="password">Introduze tu contraseña</label>
