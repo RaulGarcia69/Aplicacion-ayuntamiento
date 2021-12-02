@@ -146,8 +146,6 @@ p {
 
 #borde-tabla {
     border: 8px solid rgb(128, 28, 28);
-    border-radius: 1%;
-    border-collapse: separate !important;
 }
 
 #borde-tabla thead th {
